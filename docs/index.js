@@ -1,3 +1,4 @@
+// Version 5
 var langs =
 [['Afrikaans',       ['af-ZA']],
  ['አማርኛ',           ['am-ET']],
@@ -220,12 +221,14 @@ function pyong(s) {
     type: "GET",
     url: "https://api.genius.com/search",
     dataType: 'jsonp',
-    username: "Bearer",
-    password: "jT-0pPAa8LJtIvHRs-6cFyjNuSRHWcF-r5-E2dE9Fp58KvI9GDOuGgFyQYA53wuZ",
     headers: {
+      Authorization: "Bearer jT-0pPAa8LJtIvHRs-6cFyjNuSRHWcF-r5-E2dE9Fp58KvI9GDOuGgFyQYA53wuZ"
+    },
+    data: {
       q: s
     },
     success: function(res) {
+      console.log(res.meta.response.hits);
       console.log(res.meta.response.hits[0]);
     }
   });
