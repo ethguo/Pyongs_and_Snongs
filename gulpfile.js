@@ -17,16 +17,16 @@ var browserSync = require("browser-sync").create();
 // config
 var paths = {
   src: {
-    // pug: "src/**/*.pug",
+    pug: "src/**/*.pug",
     babel: "src/js/**/*.js",
     sass: "src/scss/**/*.scss",
     static: "static/**/*"
   },
   dest: { // 
-    html: "build",
-    js: "build/js",
-    css: "build/css",
-    static: "build"
+    html: "docs",
+    js: "docs/js",
+    css: "docs/css",
+    static: "docs"
   }
 };
 var browsers = "> 1%, last 2 versions, IE >= 9, Firefox ESR"
@@ -104,8 +104,8 @@ gulp.task("clean", function(done) {
 gulp.task("watch", function() {
   // ["pug", "babel", "sass", "static"].forEach(makeWatcher);
   // gulp.watch(paths.src.pug, gulp.task("pug"));
-  gulp.watch(paths.src.babel, gulp.task("babel"));
-  gulp.watch(paths.src.sass, gulp.task("sass"));
+  // gulp.watch(paths.src.babel, gulp.task("babel"));
+  // gulp.watch(paths.src.sass, gulp.task("sass"));
   gulp.watch(paths.src.static, gulp.task("static"));
 });
 
@@ -118,8 +118,7 @@ gulp.task("sync", function() {
 });
 
 gulp.task("build",
-  gulp.series("clean",
-    gulp.parallel("babel", "sass", "static")));
+  gulp.series("clean", "static"));
 
 gulp.task("default", 
   gulp.series("build",
