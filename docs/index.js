@@ -1,4 +1,4 @@
-// Version 6
+// Version 7
 var langs =
 [['Afrikaans',       ['af-ZA']],
  ['አማርኛ',           ['am-ET']],
@@ -220,7 +220,7 @@ function pyong(s) {
   $.ajax({
     type: "GET",
     url: "https://api.genius.com/search",
-    dataType: 'jsonp',
+    // dataType: 'jsonp',
     headers: {
       "Authorization": "Bearer jT-0pPAa8LJtIvHRs-6cFyjNuSRHWcF-r5-E2dE9Fp58KvI9GDOuGgFyQYA53wuZ"
     },
@@ -230,13 +230,7 @@ function pyong(s) {
     success: function(res) {
       console.log(res.meta.response.hits);
       console.log(res.meta.response.hits[0]);
-    },
-    error: function(err, status, msg) {
-      console.log(err);
-      console.log(status);
-      console.log(msg);
     }
-
   });
 }
 
