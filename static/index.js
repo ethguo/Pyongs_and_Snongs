@@ -219,6 +219,7 @@ function pyong(s) {
   $.ajax({
     type: "GET",
     url: "https://api.genius.com/search",
+    dataType: 'jsonp',
     username: "Bearer",
     password: "jT-0pPAa8LJtIvHRs-6cFyjNuSRHWcF-r5-E2dE9Fp58KvI9GDOuGgFyQYA53wuZ",
     headers: {
