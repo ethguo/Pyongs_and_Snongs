@@ -220,9 +220,9 @@ function pyong(s) {
     type: "GET",
     url: "https://api.genius.com/search",
     username: "Bearer",
-    password: "oTsE56-M7-5xtcdOT5GqJYxlrjwVE4FOClnrVhlIfjIlYwJXfP4Hl10tAINoURLP",
+    password: "jT-0pPAa8LJtIvHRs-6cFyjNuSRHWcF-r5-E2dE9Fp58KvI9GDOuGgFyQYA53wuZ",
     headers: {
-      q: "Hey now you're an all star"
+      q: s
     },
     success: function(res) {
       console.log(res.meta.response.hits[0]);
